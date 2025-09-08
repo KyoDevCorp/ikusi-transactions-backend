@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/kyoimgusers:${{ steps.version.outputs.version }} .
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/kyoimgtransactions:${{ steps.version.outputs.version }} .
 
       - name: Image Analysis execution
         shell: bash
@@ -52,4 +52,4 @@ jobs:
           echo "Palo Alto Analysis executing . . ."
 
       - name: Push image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/kyoimgusers:${{ steps.version.outputs.version }}
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/kyoimgtransactions:${{ steps.version.outputs.version }}
